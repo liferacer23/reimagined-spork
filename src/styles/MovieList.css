@@ -1,0 +1,45 @@
+.Loading {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.MovieRow {
+  align-items: center;
+  border-top: solid 1px #eee;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px 5px 15px;
+}
+.MovieRow:last-child {
+  border-bottom: solid 1px #eee;
+}
+.MovieRow:hover {
+  background: #f9f9f9;
+}
+.MovieRow-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+.MovieRow-description {
+  color: #888;
+  font-size: 12px;
+  overflow: hidden;
+  max-width: 50ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.MovieRow-stars {
+  color: #bbb;
+  display: flex;
+  font-size: 12px;
+}
+.MovieRow-img {
+  border-radius: 10px;
+  height: 80px;
+  width: 124px;
+}
+.NotFound {
+  text-align: center;
+}

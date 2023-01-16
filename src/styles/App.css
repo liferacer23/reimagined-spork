@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Google+Sans:400,500,600");
+@import url("./SearchBar.css");
+@import url("./Stars.css");
+@import url("./Movie.css");
+@import url("./MovieList.css");
+
+body {
+  color: #444;
+  font-family: "Google Sans";
+  margin: 0;
+}
+.Header {
+  font-size: 20px;
+  padding: 20px 0;
+  text-align: center;
+}
