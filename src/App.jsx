@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { loadMoviesWithImages } from "./helpers/loadMoviesWithImages";
 import { Home } from "./pages/Home";
-import { MovieDetails } from "./pages/MovieDetails";
+import MovieDetails from "./pages/[MovieDetails]";
 
 /**
  * Renders the entire app.

@@ -1,5 +1,5 @@
 import { Stars } from "./Stars";
-
+import { Link } from "react-router-dom";
 export function MovieList({ movies }) {
   if (!movies.length) {
     return <p className="NotFound">No results found</p>;
@@ -7,7 +7,9 @@ export function MovieList({ movies }) {
   return (
     <div className="MovieList">
       {movies.map((movie) => (
-        <MovieRow key={movie.id} movie={movie} />
+        <Link to={`/${movie.id}`}>
+          <MovieRow key={movie.id} movie={movie} />
+        </Link>
       ))}
     </div>
   );
