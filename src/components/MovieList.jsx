@@ -1,5 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { Stars } from "./Stars";
 import { Link } from "react-router-dom";
+import "../styles/MovieList.css";
 export function MovieList({ movies }) {
   if (!movies.length) {
     return <p className="NotFound">No results found</p>;
@@ -16,8 +18,23 @@ export function MovieList({ movies }) {
 }
 
 function MovieRow({ movie }) {
-  console.log(movie);
   // TODO: Implement the navigation to the movie details page. See the README for more details.
+
+  const [movieImage, setMovieImage] = useState({
+    img: "",
+  });
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    getMovieImage(movie);
+  }, [movie]);
+
+  const getMovieImage = async () => {
+    setLoading(true);
+    const res = await fetch(`https://lamarr.tech/api/data/img/${movie.id}`);
+    const data = await res.json();
+    setMovieImage(data);
+    setLoading(false);
+  };
   return (
     <div className="MovieRow">
       <div className="MovieRow-details">
@@ -28,7 +45,11 @@ function MovieRow({ movie }) {
           &nbsp;{movie.reviews}
         </div>
       </div>
-      <img className="MovieRow-img" src={movie.img} alt={movie.name} />
+      {loading ? (
+        <div>Loading ...</div>
+      ) : (
+        <img className="MovieRow-img" src={movieImage.img} alt={movie.name} />
+      )}
     </div>
   );
 }
